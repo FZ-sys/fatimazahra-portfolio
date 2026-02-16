@@ -46,3 +46,14 @@ form {
   width: 100% !important;
   margin-bottom: 15px !important;
 }
+
+/* Ensure form inputs are visible against site-wide dark/light themes */
+.contact_wrapper, .contact-form {
+  color: #050f0b;
+}
+
+.contact-form .MuiInputBase-input,
+.contact-form textarea,
+.contact-form .MuiInputLabel-root {
+  color: #050f0b !important;
+}

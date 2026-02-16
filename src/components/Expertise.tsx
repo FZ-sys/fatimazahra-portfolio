@@ -6,39 +6,36 @@ import Chip from '@mui/material/Chip';
 import '../assets/styles/Expertise.scss';
 
 const labelsFirst = [
-    "React",
-    "TypeScript",
-    "JavaScript",
-    "HTML5",
-    "CSS3",
-    "SASS",
-    "Flask",
+    "Design of scalable backend services",
     "Python",
-    "SQL",
-    "PostgreSQL",
-    "Postman"
+    "FastAPI",
+    "REST APIs",
+    "Data ingestion & pipelines",
+    "Indexing",
+    "SQL / PostgreSQL",
+    "FFmpeg (media processing)",
+    "Docker",
+    "CI/CD",
 ];
 
 const labelsSecond = [
-    "Git",
-    "GitHub Actions",
-    "Docker",
-    "AWS",
-    "Azure",
+    "Testing (Cypress)",
+    "E2E & Component Testing",
+    "Automation",
+    "Performance",
+    "Monitoring",
     "Linux",
-    "Snowflake",
-    "Pandas",
-    "Selenium",
+    "Scripting",
+    "Postman",
 ];
 
 const labelsThird = [
-    "OpenAI",
-    "Groq",
+    "LLM Integration",
     "LangChain",
-    "Qdrant",
-    "Hugging Face",
-    "LlamaIndex",
-    "Streamlit",
+    "Whisper (speech-to-text)",
+    "Semantic Search & Embeddings",
+    "Vector DBs",
+    "Prompt Engineering",
 ];
 
 function Expertise() {
@@ -49,10 +46,10 @@ function Expertise() {
             <div className="skills-grid">
                 <div className="skill">
                     <FontAwesomeIcon icon={faReact} size="3x"/>
-                    <h3>Full Stack Web Development</h3>
-                    <p>I have built a diverse array of web applications from scratch using modern technologies such as React and Flask. I have a strong proficiency in the SDLC process and frontend + backend development.</p>
+                    <h3>Backend & Data Engineering</h3>
+                    <p>Design and implementation of scalable backend services and AI-driven extraction pipelines, including ingestion from multimodal sources and robust indexing for search.</p>
                     <div className="flex-chips">
-                        <span className="chip-title">Tech stack:</span>
+                        <span className="chip-title">Core:</span>
                         {labelsFirst.map((label, index) => (
                             <Chip key={index} className='chip' label={label} />
                         ))}
@@ -61,10 +58,10 @@ function Expertise() {
 
                 <div className="skill">
                     <FontAwesomeIcon icon={faDocker} size="3x"/>
-                    <h3>DevOps & Automation</h3>
-                    <p>Once the application is built, I help clients set up DevOps testing, CI/CD pipelines, and deployment automation to support the successful Go-Live.</p>
+                    <h3>Testing, Automation & Ops</h3>
+                    <p>Implementing robust testing strategies (E2E & component), automation of pipelines and deployments, and observability to guarantee reliability and performance at scale.</p>
                     <div className="flex-chips">
-                        <span className="chip-title">Tech stack:</span>
+                        <span className="chip-title">Tools & Practices:</span>
                         {labelsSecond.map((label, index) => (
                             <Chip key={index} className='chip' label={label} />
                         ))}
@@ -73,10 +70,10 @@ function Expertise() {
 
                 <div className="skill">
                     <FontAwesomeIcon icon={faPython} size="3x"/>
-                    <h3>GenAI & LLM</h3>
-                    <p>Stay relevant in the market by leveraging the latest AI models in your projects. I have professional experience building enterprise grade GenAI-enabled solutions to empower intelligent decision making.</p>
+                    <h3>AI & LLM Integration</h3>
+                    <p>Integrating LLMs for document understanding and semantic search, orchestrating pipelines with LangChain, and processing multimodal content (speech-to-text with Whisper, media handling).</p>
                     <div className="flex-chips">
-                        <span className="chip-title">Tech stack:</span>
+                        <span className="chip-title">ML / LLM:</span>
                         {labelsThird.map((label, index) => (
                             <Chip key={index} className='chip' label={label} />
                         ))}

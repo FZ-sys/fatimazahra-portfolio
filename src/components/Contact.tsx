@@ -1,6 +1,6 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import '../assets/styles/Contact.scss';
-// import emailjs from '@emailjs/browser';
+import emailjs from '@emailjs/browser';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import SendIcon from '@mui/icons-material/Send';
@@ -16,7 +16,16 @@ function Contact() {
   const [emailError, setEmailError] = useState<boolean>(false);
   const [messageError, setMessageError] = useState<boolean>(false);
 
-  const form = useRef();
+  const form = useRef<HTMLFormElement | null>(null);
+
+  useEffect(() => {
+    try {
+      // initialize EmailJS with public key (safe to call on client)
+      emailjs.init('ubGLxvCpUDrlvciGP');
+    } catch (err) {
+      console.warn('EmailJS init warning:', err);
+    }
+  }, []);
 
   const sendEmail = (e: any) => {
     e.preventDefault();
@@ -25,28 +34,29 @@ function Contact() {
     setEmailError(email === '');
     setMessageError(message === '');
 
-    /* Uncomment below if you want to enable the emailJS */
+    /* EmailJS send */
 
-    // if (name !== '' && email !== '' && message !== '') {
-    //   var templateParams = {
-    //     name: name,
-    //     email: email,
-    //     message: message
-    //   };
+    if (name !== '' && email !== '' && message !== '') {
+      const templateParams = {
+        name: name,
+        email: email,
+        message: message
+      };
 
-    //   console.log(templateParams);
-    //   emailjs.send('service_id', 'template_id', templateParams, 'api_key').then(
-    //     (response) => {
-    //       console.log('SUCCESS!', response.status, response.text);
-    //     },
-    //     (error) => {
-    //       console.log('FAILED...', error);
-    //     },
-    //   );
-    //   setName('');
-    //   setEmail('');
-    //   setMessage('');
-    // }
+      emailjs.send('service_vn2nukc', 'template_3ssb5xt', templateParams, 'ubGLxvCpUDrlvciGP')
+        .then((response) => {
+          console.log('EmailJS response:', response);
+          alert('Message sent — thank you!');
+          setName('');
+          setEmail('');
+          setMessage('');
+        })
+        .catch((error) => {
+          console.error('Email send error:', error);
+          const detail = (error && (error.text || error.statusText)) || JSON.stringify(error);
+          alert('Send failed — ' + detail);
+        });
+    }
   };
 
   return (
@@ -71,7 +81,9 @@ function Contact() {
                 value={name}
                 onChange={(e) => {
                   setName(e.target.value);
+                  console.log('Contact input name:', e.target.value);
                 }}
+                inputProps={{ style: { color: '#000' } }}
                 error={nameError}
                 helperText={nameError ? "Please enter your name" : ""}
               />
@@ -83,7 +95,9 @@ function Contact() {
                 value={email}
                 onChange={(e) => {
                   setEmail(e.target.value);
+                  console.log('Contact input email:', e.target.value);
                 }}
+                inputProps={{ style: { color: '#000' } }}
                 error={emailError}
                 helperText={emailError ? "Please enter your email or phone number" : ""}
               />
@@ -99,11 +113,13 @@ function Contact() {
               value={message}
               onChange={(e) => {
                 setMessage(e.target.value);
+                console.log('Contact input message:', e.target.value);
               }}
+              inputProps={{ style: { color: '#000' } }}
               error={messageError}
               helperText={messageError ? "Please enter the message" : ""}
             />
-            <Button variant="contained" endIcon={<SendIcon />} onClick={sendEmail}>
+            <Button variant="contained" endIcon={<SendIcon />} onClick={sendEmail} disabled={name === '' || email === '' || message === ''}>
               Send
             </Button>
           </Box>

@@ -16,51 +16,37 @@ function Timeline() {
             className="vertical-timeline-element--work"
             contentStyle={{ background: 'white', color: 'rgb(39, 40, 34)' }}
             contentArrowStyle={{ borderRight: '7px solid  white' }}
-            date="2022 - present"
+            date="October 2024 – August 2026"
             iconStyle={{ background: '#5000ca', color: 'rgb(39, 40, 34)' }}
             icon={<FontAwesomeIcon icon={faBriefcase} />}
           >
-            <h3 className="vertical-timeline-element-title">Technology Consultant</h3>
-            <h4 className="vertical-timeline-element-subtitle">Dallas, TX</h4>
-            <p>
-              Full-stack Web Development, GenAI/LLM, Project Management, Business Development
-            </p>
+            <h3 className="vertical-timeline-element-title">Apprenticeship — Software Engineer, Dassault Systèmes</h3>
+            <h4 className="vertical-timeline-element-subtitle">France</h4>
+            <ul>
+              <li>Writing technical specifications from functional documents</li>
+              <li>Developing backend features in Python (FastAPI, REST APIs)</li>
+              <li>End-to-end and component testing with Cypress</li>
+              <li>Building multi-format extraction pipelines (PDF, PPT, TXT, audio, video, URL) and integrating LLMs (LangChain, Whisper)</li>
+              <li>Automating indexing and improving search relevance</li>
+              <li>Audio/video processing: conversion and optimization with FFmpeg</li>
+              <li>Project communication: presentations, key metrics, and showcasing progress</li>
+            </ul>
           </VerticalTimelineElement>
+
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
-            date="2020 - 2022"
+            date="October 2023 – September 2024"
             iconStyle={{ background: '#5000ca', color: 'rgb(39, 40, 34)' }}
             icon={<FontAwesomeIcon icon={faBriefcase} />}
           >
-            <h3 className="vertical-timeline-element-title">Full Stack Engineer</h3>
-            <h4 className="vertical-timeline-element-subtitle">Laie, HI</h4>
-            <p>
-              Frontend Development, Backend Development, User Experience, Team Leading
-            </p>
-          </VerticalTimelineElement>
-          <VerticalTimelineElement
-            className="vertical-timeline-element--work"
-            date="2021 - 2021"
-            iconStyle={{ background: '#5000ca', color: 'rgb(39, 40, 34)' }}
-            icon={<FontAwesomeIcon icon={faBriefcase} />}
-          >
-            <h3 className="vertical-timeline-element-title">Staff Engineer Intern</h3>
-            <h4 className="vertical-timeline-element-subtitle">Laie, HI</h4>
-            <p>
-              Full-stack Development, API Development, User Experience
-            </p>
-          </VerticalTimelineElement>
-          <VerticalTimelineElement
-            className="vertical-timeline-element--work"
-            date="2020 - 2020"
-            iconStyle={{ background: '#5000ca', color: 'rgb(39, 40, 34)' }}
-            icon={<FontAwesomeIcon icon={faBriefcase} />}
-          >
-            <h3 className="vertical-timeline-element-title">Data Analyst Intern</h3>
-            <h4 className="vertical-timeline-element-subtitle">Tokyo, Japan</h4>
-            <p>
-              Automation, Data Governance, Statistical Analysis
-            </p>
+            <h3 className="vertical-timeline-element-title">Apprenticeship — Business Process Analyst, Dassault Systèmes</h3>
+            <h4 className="vertical-timeline-element-subtitle">France</h4>
+            <ul>
+              <li>Analyzing and formalizing business requirements</li>
+              <li>Writing functional specifications and scoping documents</li>
+              <li>UML modeling of processes and features</li>
+              <li>Collaborating with developers, UX designers, and business stakeholders in English</li>
+            </ul>
           </VerticalTimelineElement>
         </VerticalTimeline>
       </div>

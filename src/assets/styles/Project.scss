@@ -12,7 +12,28 @@
 }
   
 .projects-container .projects-grid .project {
-    text-align: left;
+        text-align: left;
+}
+
+.project.cinetica {
+    text-align: center;
+}
+
+.cinetica-single {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.cinetica-single img {
+    width: 98%;
+    max-width: 1800px;
+    border-radius: 8px;
+}
+
+.project-desc {
+    max-width: 900px;
+    margin: 0.75rem auto 0;
 }
   
 .project h2:hover {
@@ -44,6 +65,16 @@
       
         .projects-container .projects-grid .project {
             padding-bottom: 5%;
+                        text-align: center;
         }
+
+                .cinetica-single {
+                    display: block;
+                }
+
+                .cinetica-single img {
+                    width: 100%;
+                    margin-bottom: 0.75rem;
+                }
     }
 }
